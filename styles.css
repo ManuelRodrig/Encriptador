@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+:root {
+    --fuente-Playwrite: "Playwrite GB S", cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
+}
+
+body {
+    background-color: #FEFFD2;
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center;
+    background-attachment: fixed; /* Fija la imagen de fondo */
+}
+
+.logo_imagen {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF7D29;
+    font-family: var(--fuente-Playwrite);
+    font-size: 1.75rem;
+}
+
+/* Estilos para la sección de textareas y botones */
+.text-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.text-tareas .inputs {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.text-tareas textarea {
+    width: 100%;
+    padding: 10px;
+    resize: none; 
+    overflow: hidden;
+    border: 1px solid #ccc; /* Añadido borde para visualización */
+    border-radius: 4px; /* Añadido borde redondeado */
+}
+
+.outputText {
+    font-family: var(--fuente-Playwrite);
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 80px; /* Deja espacio para la imagen en la parte inferior */
+    background-color: #FEFDED;
+    resize: none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    height: 200px; /* Ajusta la altura del textarea según sea necesario */
+}
+
+.inputText {
+    font-family: var(--fuente-Playwrite);
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    resize: none;
+    border: none;
+    outline: none;
+    height: 100px; /* Ajusta la altura del textarea según sea necesario */
+}
+
+.textarea-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.textarea-placeholder-icon {
+    position: absolute;
+    bottom: 10px; /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%; /* La imagen ocupará la mitad del ancho del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    pointer-events: none;
+    opacity: 0.5; /* Haz la imagen un poco transparente */
+    transition: opacity 0.3s; /* Añadir transición para el cambio de opacidad */
+}
+
+.text-tareas .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar los botones */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.text-tareas .buttons button {
+    font-family: var(--fuente-Playwrite);
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #FF8400;
+    color: #F6F1E9;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Añadir cursor pointer */
+}
+
+.text-tareas .buttons button:hover {
+    background-color: #FFF2CC;
+}
+
+/* Media queries para hacer el diseño responsivo */
+@media (min-width: 768px) {
+    .text-tareas {
+        flex-direction: row;
+    }
+
+    .text-tareas .inputs {
+        flex: 2;
+    }
+
+    .text-tareas .buttons {
+        flex: 1;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .outputText {
+        height: 400px; /* Ajustar altura para pantallas grandes */
+    }
+
+    .inputText {
+        height: 200px; /* Ajustar altura para pantallas grandes */
+    }
+}
+
+@media (max-width: 767px) {
+    .text-tareas {
+        flex-direction: column;
+    }
+
+    .text-tareas .inputs {
+        flex: 1;
+    }
+
+    .text-tareas .buttons {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .outputText {
+        height: 200px; /* Ajustar altura para pantallas pequeñas */
+    }
+
+    .inputText {
+        height: 100px; /* Ajustar altura para pantallas pequeñas */
+    }
+
+    .textarea-container .textarea-placeholder-icon {
+        display: none; /* Ocultar la imagen en pantallas pequeñas */
+    }
+}
