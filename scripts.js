@@ -1,44 +1,50 @@
-// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
+    const inputText = document.getElementById('inputText');
+    const outputText = document.getElementById('outputText');
+
     document.getElementById('encryptButton').addEventListener('click', encryptText);
     document.getElementById('decryptButton').addEventListener('click', decryptText);
     document.getElementById('copyButton').addEventListener('click', copyToClipboard);
 
+    inputText.addEventListener('input', enforceLowercase);
+
+    adjustTextareaHeight(inputText);
+
     function encryptText() {
-        let input = document.getElementById('inputText').value;
+        let input = inputText.value;
         let encrypted = input.replace(/e/g, "enter")
                              .replace(/i/g, "imes")
                              .replace(/a/g, "ai")
                              .replace(/o/g, "ober")
                              .replace(/u/g, "ufat");
-        document.getElementById('outputText').value = encrypted;
+        outputText.value = encrypted;
     }
 
     function decryptText() {
-        let input = document.getElementById('inputText').value;
+        let input = inputText.value;
         let decrypted = input.replace(/enter/g, "e")
                              .replace(/imes/g, "i")
                              .replace(/ai/g, "a")
                              .replace(/ober/g, "o")
                              .replace(/ufat/g, "u");
-        document.getElementById('outputText').value = decrypted;
+        outputText.value = decrypted;
     }
 
     function copyToClipboard() {
-        let output = document.getElementById('outputText');
-        output.select();
-        output.setSelectionRange(0, 99999); // For mobile devices
+        outputText.select();
+        outputText.setSelectionRange(0, 99999); // Para dispositivos móviles
         document.execCommand('copy');
-        alert('Texto copiado: ' + output.value);
+    }
+
+    function enforceLowercase(event) {
+        let value = event.target.value;
+        event.target.value = value.replace(/[^a-z\s?!¡¿]/g, ''); // Filtra caracteres no permitidos excepto espacios
+    }
+
+    function adjustTextareaHeight(textarea) {
+        textarea.style.height = 'auto'; // Resetea la altura para recalcular
+        textarea.style.height = (textarea.scrollHeight) + 'px'; // Ajusta la altura al contenido
     }
 });
-function adjustTextareaHeight(textarea) {
-    textarea.style.height = 'auto'; // Resetea la altura para recalcular
-    textarea.style.height = (textarea.scrollHeight) + 'px'; // Ajusta la altura al contenido
-}
 
-// Llamar a la función para inicializar la altura al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-    const inputText = document.getElementById('inputText');
-    adjustTextareaHeight(inputText);
-});
+
