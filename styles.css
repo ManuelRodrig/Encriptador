@@ -69,6 +69,7 @@ body {
     box-sizing: border-box;
     height: 200px; /* Ajusta la altura del textarea según sea necesario */
     color: var(--color-texto-textarea); /* Color del texto */
+    overflow : hidden;
 }
 
 .inputText {

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let encrypted = input.replace(/e/g, "enter")
                              .replace(/i/g, "imes")
                              .replace(/a/g, "ai")
+                             .replace(/ai/g, "aiimes")
                              .replace(/o/g, "ober")
                              .replace(/u/g, "ufat");
         outputText.value = encrypted;
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let input = inputText.value;
         let decrypted = input.replace(/enter/g, "e")
                              .replace(/imes/g, "i")
-                             .replace(/ai/g, "a")
+                             .replace(/aiimes/g, "a")
+                             .replace(/ai/g, "ai")
                              .replace(/ober/g, "o")
                              .replace(/ufat/g, "u");
         outputText.value = decrypted;
