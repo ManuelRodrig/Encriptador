@@ -422,7 +422,7 @@ ul {
     }
 
     .inputText {
-        height: 200px; /* Ajustar altura para pantallas grandes */
+        height: 400px; /* Ajustar altura para pantallas grandes */
     }
 }
 
@@ -445,7 +445,7 @@ ul {
     }
 
     .inputText {
-        height: 100px; /* Ajustar altura para pantallas pequeñas */
+        height: 200px; /* Ajustar altura para pantallas pequeñas */
     }
 
     .textarea-container .textarea-placeholder-icon {
