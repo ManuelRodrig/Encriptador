@@ -29,8 +29,18 @@ body {
     border-radius: 50%;
 }
 
-.h1, .h2{
+.h1{
   font-size: 1.5rem;
+  font-weight: 400;
+  font-weight: bold;
+  padding: 24px;
+  text-align: center;
+  color: #FF7D29;
+  font-family: var(--fuente-Playwrite);
+}
+
+.h2{
+  font-size: 1.0rem;
   font-weight: 400;
   font-weight: bold;
   padding: 24px;
